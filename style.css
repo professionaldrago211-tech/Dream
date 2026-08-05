@@ -1,0 +1,72 @@
+/* ==========================
+   Video & Audio Editor
+   style.css
+========================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    color: #222;
+}
+
+header {
+    background: #0066cc;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+header h1 {
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+
+header p {
+    font-size: 16px;
+}
+
+main {
+    padding: 20px;
+}
+
+section {
+    margin-top: 20px;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+button {
+    width: 100%;
+    padding: 16px;
+    margin-bottom: 12px;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    background: #0066cc;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #004f9e;
+}
+
+select {
+    width: 100%;
+    padding: 14px;
+    margin: 15px 0;
+    font-size: 18px;
+    border-radius: 8px;
+}
+
+[hidden] {
+    display: none !important;
+}
