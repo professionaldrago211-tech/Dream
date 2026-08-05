@@ -1,1 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0066cc">
 
+<title>Video & Audio Editor</title>
+
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+<h1>Video & Audio Editor</h1>
+<p>Professional Video & Audio Editing</p>
+</header>
+
+<main>
+
+<section id="home">
+
+<button id="videoToolsBtn">
+🎬 Video Tools
+</button>
+
+<button id="audioToolsBtn">
+🎵 Audio Tools
+</button>
+
+<button id="settingsBtn">
+⚙ Settings
+</button>
+
+<button id="helpBtn">
+❓ Help
+</button>
+
+</section>
+
+<section id="videoTools" hidden>
+
+<h2>Video Tools</h2>
+
+<button>Insert Clips</button>
+
+<button>Merge Videos</button>
+
+<button>Trim Video</button>
+
+<button>Add Music</button>
+
+<button>Video to MP3</button>
+
+<button onclick="goHome()">
+← Back
+</button>
+
+</section>
+
+<section id="audioTools" hidden>
+
+<h2>Audio Tools</h2>
+
+<button>Merge Audio</button>
+
+<button>Trim Audio</button>
+
+<button onclick="goHome()">
+← Back
+</button>
+
+</section>
+
+<section id="settings" hidden>
+
+<h2>Settings</h2>
+
+<p>Default Export Format</p>
+
+<select>
+
+<option>MP4</option>
+
+<option>MP3</option>
+
+</select>
+
+<button onclick="goHome()">
+← Back
+</button>
+
+</section>
+
+<section id="help" hidden>
+
+<h2>Help</h2>
+
+<p>
+Tutorials will appear here.
+</p>
+
+<button onclick="goHome()">
+← Back
+</button>
+
+</section>
+
+</main>
+
+<script src="script.js"></script>
+
+</body>
+</html>
