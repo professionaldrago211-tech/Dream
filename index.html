@@ -1,112 +1,267 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#0066cc">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0066cc">
 
-<title>Video & Audio Editor</title>
+    <title>Video & Audio Editor</title>
 
-<link rel="manifest" href="manifest.json">
-<link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
 <header>
-<h1>Video & Audio Editor</h1>
-<p>Professional Video & Audio Editing</p>
+    <h1>Video & Audio Editor</h1>
+    <p>Video and Audio Editing</p>
 </header>
 
 <main>
 
-<section id="home">
+    <!-- HOME -->
+    <section id="home">
+        <button id="videoToolsBtn" type="button">
+            Video Tools
+        </button>
 
-<button id="videoToolsBtn">
-🎬 Video Tools
-</button>
+        <button id="audioToolsBtn" type="button">
+            Audio Tools
+        </button>
 
-<button id="audioToolsBtn">
-🎵 Audio Tools
-</button>
+        <button id="settingsBtn" type="button">
+            Settings
+        </button>
 
-<button id="settingsBtn">
-⚙ Settings
-</button>
+        <button id="helpBtn" type="button">
+            Help
+        </button>
+    </section>
 
-<button id="helpBtn">
-❓ Help
-</button>
 
-</section>
+    <!-- VIDEO TOOLS -->
+    <section id="videoTools" hidden>
+        <h2>Video Tools</h2>
 
-<section id="videoTools" hidden>
+        <button id="insertClipsBtn" type="button">
+            Insert Clips
+        </button>
 
-<h2>Video Tools</h2>
+        <button type="button">
+            Merge Videos
+        </button>
 
-<button>Insert Clips</button>
+        <button type="button">
+            Trim Video
+        </button>
 
-<button>Merge Videos</button>
+        <button type="button">
+            Add Music
+        </button>
 
-<button>Trim Video</button>
+        <button type="button">
+            Video to MP3
+        </button>
 
-<button>Add Music</button>
+        <button id="videoBackBtn" type="button">
+            Back
+        </button>
+    </section>
 
-<button>Video to MP3</button>
 
-<button onclick="goHome()">
-← Back
-</button>
+    <!-- INSERT CLIPS -->
+    <section id="insertClips" hidden>
+        <h2>Insert Clips</h2>
 
-</section>
+        <p>
+            Choose a base video, pause at the position where you want
+            to insert a clip, then choose the clip.
+        </p>
 
-<section id="audioTools" hidden>
+        <label for="baseVideoInput">
+            Choose Base Video
+        </label>
 
-<h2>Audio Tools</h2>
+        <input
+            id="baseVideoInput"
+            type="file"
+            accept="video/*"
+        >
 
-<button>Merge Audio</button>
+        <video
+            id="baseVideoPlayer"
+            controls
+            preload="metadata"
+            width="100%"
+            aria-label="Base video player"
+        >
+            Your browser does not support video playback.
+        </video>
 
-<button>Trim Audio</button>
+        <div class="player-controls">
 
-<button onclick="goHome()">
-← Back
-</button>
+            <button
+                id="rewindBtn"
+                type="button"
+                aria-label="Rewind 10 seconds"
+            >
+                Rewind 10 seconds
+            </button>
 
-</section>
+            <button
+                id="playPauseBtn"
+                type="button"
+                aria-label="Play video"
+            >
+                Play
+            </button>
 
-<section id="settings" hidden>
+            <button
+                id="forwardBtn"
+                type="button"
+                aria-label="Forward 10 seconds"
+            >
+                Forward 10 seconds
+            </button>
 
-<h2>Settings</h2>
+        </div>
 
-<p>Default Export Format</p>
+        <label for="videoPosition">
+            Video position
+        </label>
 
-<select>
+        <input
+            id="videoPosition"
+            type="range"
+            min="0"
+            max="100"
+            value="0"
+            step="0.1"
+            aria-label="Video position"
+        >
 
-<option>MP4</option>
+        <p id="timeDisplay" aria-live="polite">
+            00:00 / 00:00
+        </p>
 
-<option>MP3</option>
 
-</select>
+        <hr>
 
-<button onclick="goHome()">
-← Back
-</button>
+        <h3>Add Clip</h3>
 
-</section>
+        <p>
+            Pause the base video at the desired position, then choose
+            the clip you want to insert.
+        </p>
 
-<section id="help" hidden>
+        <button
+            id="insertClipBtn"
+            type="button"
+        >
+            Insert Clip
+        </button>
 
-<h2>Help</h2>
+        <label for="clipInput">
+            Choose Clip
+        </label>
 
-<p>
-Tutorials will appear here.
-</p>
+        <input
+            id="clipInput"
+            type="file"
+            accept="video/*"
+        >
 
-<button onclick="goHome()">
-← Back
-</button>
+        <button
+            id="doneClipBtn"
+            type="button"
+        >
+            Done
+        </button>
 
-</section>
+        <button
+            id="clearClipsBtn"
+            type="button"
+        >
+            Clear
+        </button>
+
+        <h3>Clips to Insert</h3>
+
+        <div
+            id="clipList"
+            aria-live="polite"
+            aria-label="Clips waiting to be inserted"
+        >
+            No clips added yet.
+        </div>
+
+        <button
+            id="saveProjectBtn"
+            type="button"
+        >
+            Save Final Video
+        </button>
+
+        <button
+            id="insertBackBtn"
+            type="button"
+        >
+            Back to Video Tools
+        </button>
+    </section>
+
+
+    <!-- AUDIO TOOLS -->
+    <section id="audioTools" hidden>
+        <h2>Audio Tools</h2>
+
+        <button type="button">
+            Merge Audio
+        </button>
+
+        <button type="button">
+            Trim Audio
+        </button>
+
+        <button id="audioBackBtn" type="button">
+            Back
+        </button>
+    </section>
+
+
+    <!-- SETTINGS -->
+    <section id="settings" hidden>
+        <h2>Settings</h2>
+
+        <label for="exportFormat">
+            Default Export Format
+        </label>
+
+        <select id="exportFormat">
+            <option value="mp4">MP4</option>
+            <option value="mp3">MP3</option>
+        </select>
+
+        <button id="settingsBackBtn" type="button">
+            Back
+        </button>
+    </section>
+
+
+    <!-- HELP -->
+    <section id="help" hidden>
+        <h2>Help</h2>
+
+        <p>
+            Step-by-step tutorials for every editing tool will
+            appear here.
+        </p>
+
+        <button id="helpBackBtn" type="button">
+            Back
+        </button>
+    </section>
 
 </main>
 
