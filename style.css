@@ -1,72 +1,216 @@
-/* ==========================
+/* ==============================
    Video & Audio Editor
    style.css
-========================== */
+   ============================== */
 
 * {
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
 }
 
-body {
-    font-family: Arial, sans-serif;
-    background: #f4f4f4;
-    color: #222;
-}
-
-header {
-    background: #0066cc;
-    color: white;
-    text-align: center;
-    padding: 20px;
-}
-
-header h1 {
-    font-size: 28px;
-    margin-bottom: 8px;
-}
-
-header p {
+html {
     font-size: 16px;
 }
 
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: #f5f5f5;
+    color: #111111;
+    line-height: 1.6;
+}
+
+header {
+    padding: 24px 16px;
+    background: #0066cc;
+    color: white;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.8rem;
+}
+
+header p {
+    margin: 8px 0 0;
+}
+
 main {
-    padding: 20px;
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 20px 16px 40px;
 }
 
 section {
-    margin-top: 20px;
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-h2 {
-    margin-bottom: 20px;
+section h2 {
+    margin-top: 0;
+    font-size: 1.5rem;
 }
+
+section h3 {
+    margin-top: 24px;
+}
+
+/* Buttons */
 
 button {
+    display: block;
     width: 100%;
-    padding: 16px;
-    margin-bottom: 12px;
-    font-size: 18px;
-    border: none;
-    border-radius: 10px;
+    min-height: 52px;
+    margin: 12px 0;
+    padding: 12px 16px;
+
+    border: 2px solid #0066cc;
+    border-radius: 8px;
+
     background: #0066cc;
     color: white;
+
+    font-size: 1rem;
+    font-weight: bold;
+
     cursor: pointer;
 }
 
 button:hover {
-    background: #004f9e;
+    opacity: 0.9;
 }
+
+button:focus {
+    outline: 4px solid #ffbf00;
+    outline-offset: 3px;
+}
+
+/* Labels */
+
+label {
+    display: block;
+    margin-top: 16px;
+    margin-bottom: 6px;
+    font-weight: bold;
+}
+
+/* File inputs */
+
+input[type="file"] {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 16px;
+
+    border: 2px solid #555555;
+    border-radius: 8px;
+
+    background: white;
+    font-size: 1rem;
+}
+
+/* Video player */
+
+video {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    margin: 16px 0;
+
+    border-radius: 8px;
+    background: black;
+}
+
+/* Player controls */
+
+.player-controls {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.player-controls button {
+    flex: 1;
+    min-width: 140px;
+}
+
+/* Slider */
+
+input[type="range"] {
+    display: block;
+    width: 100%;
+    min-height: 44px;
+    margin: 8px 0 16px;
+}
+
+/* Select */
 
 select {
     width: 100%;
-    padding: 14px;
-    margin: 15px 0;
-    font-size: 18px;
+    min-height: 48px;
+    padding: 10px;
+
+    border: 2px solid #555555;
     border-radius: 8px;
+
+    background: white;
+    color: #111111;
+
+    font-size: 1rem;
 }
 
-[hidden] {
-    display: none !important;
+/* Clip list */
+
+#clipList {
+    min-height: 60px;
+    padding: 12px;
+    margin: 12px 0;
+
+    border: 2px dashed #666666;
+    border-radius: 8px;
+
+    background: #fafafa;
+}
+
+/* Separators */
+
+hr {
+    margin: 24px 0;
+    border: 0;
+    border-top: 2px solid #dddddd;
+}
+
+/* Screen-reader friendly live information */
+
+[aria-live] {
+    font-weight: bold;
+}
+
+/* Mobile */
+
+@media (max-width: 480px) {
+
+    main {
+        padding: 12px 10px 30px;
+    }
+
+    section {
+        padding: 16px;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    .player-controls {
+        display: block;
+    }
+
+    .player-controls button {
+        width: 100%;
+    }
 }
