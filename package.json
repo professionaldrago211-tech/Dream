@@ -1,0 +1,12 @@
+{
+  "name": "dream-video-editor",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "@ffmpeg/ffmpeg": "0.12.15",
+    "@ffmpeg/util": "0.12.2"
+  },
+  "devDependencies": {
+    "@ffmpeg/core": "0.12.10"
+  }
+}
