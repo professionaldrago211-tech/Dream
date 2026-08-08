@@ -1,83 +1,160 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#0066cc">
 
-    <title>Video & Audio Editor</title>
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-    <link rel="manifest" href="manifest.json">
-    <link rel="stylesheet" href="style.css">
+    <meta
+        name="theme-color"
+        content="#0066cc"
+    >
+
+    <title>Dream - Video & Audio Editor</title>
+
+    <link
+        rel="manifest"
+        href="manifest.json"
+    >
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
 </head>
 
 <body>
 
 <header>
-    <h1>Video & Audio Editor</h1>
-    <p>Video and Audio Editing</p>
+    <h1>Dream - Video & Audio Editor</h1>
+
+    <p>
+        Video and Audio Editing
+    </p>
 </header>
+
 
 <main>
 
-    <!-- HOME -->
+    <!-- ==========================================
+         HOME
+         ========================================== -->
+
     <section id="home">
-        <button id="videoToolsBtn" type="button">
+
+        <h2>Home</h2>
+
+        <button
+            id="videoToolsBtn"
+            type="button"
+        >
             Video Tools
         </button>
 
-        <button id="audioToolsBtn" type="button">
+        <button
+            id="audioToolsBtn"
+            type="button"
+        >
             Audio Tools
         </button>
 
-        <button id="settingsBtn" type="button">
+        <button
+            id="settingsBtn"
+            type="button"
+        >
             Settings
         </button>
 
-        <button id="helpBtn" type="button">
+        <button
+            id="helpBtn"
+            type="button"
+        >
             Help
         </button>
+
     </section>
 
 
-    <!-- VIDEO TOOLS -->
-    <section id="videoTools" hidden>
+    <!-- ==========================================
+         VIDEO TOOLS
+         ========================================== -->
+
+    <section
+        id="videoTools"
+        hidden
+    >
+
         <h2>Video Tools</h2>
 
-        <button id="insertClipsBtn" type="button">
+        <button
+            id="insertClipsBtn"
+            type="button"
+        >
             Insert Clips
         </button>
 
-        <button type="button">
+        <button
+            type="button"
+            disabled
+        >
             Merge Videos
         </button>
 
-        <button type="button">
+        <button
+            type="button"
+            disabled
+        >
             Trim Video
         </button>
 
-        <button type="button">
+        <button
+            type="button"
+            disabled
+        >
             Add Music
         </button>
 
-        <button type="button">
+        <button
+            type="button"
+            disabled
+        >
             Video to MP3
         </button>
 
-        <button id="videoBackBtn" type="button">
+        <button
+            id="videoBackBtn"
+            type="button"
+        >
             Back
         </button>
+
     </section>
 
 
-    <!-- INSERT CLIPS -->
-    <section id="insertClips" hidden>
+    <!-- ==========================================
+         INSERT CLIPS
+         ========================================== -->
+
+    <section
+        id="insertClips"
+        hidden
+    >
+
         <h2>Insert Clips</h2>
 
         <p>
-            Choose a base video, pause at the position where you want
-            to insert a clip, then choose the clip.
+            Choose a base video, pause at the position where
+            you want to insert a clip, then choose the clip.
         </p>
+
+
+        <!-- BASE VIDEO -->
+
+        <h3>Base Video</h3>
 
         <label for="baseVideoInput">
             Choose Base Video
@@ -89,6 +166,9 @@
             accept="video/*"
         >
 
+
+        <!-- VIDEO PLAYER -->
+
         <video
             id="baseVideoPlayer"
             controls
@@ -98,6 +178,9 @@
         >
             Your browser does not support video playback.
         </video>
+
+
+        <!-- PLAYER CONTROLS -->
 
         <div class="player-controls">
 
@@ -109,6 +192,7 @@
                 Rewind 10 seconds
             </button>
 
+
             <button
                 id="playPauseBtn"
                 type="button"
@@ -116,6 +200,7 @@
             >
                 Play
             </button>
+
 
             <button
                 id="forwardBtn"
@@ -126,6 +211,9 @@
             </button>
 
         </div>
+
+
+        <!-- VIDEO POSITION -->
 
         <label for="videoPosition">
             Video position
@@ -141,26 +229,27 @@
             aria-label="Video position"
         >
 
-        <p id="timeDisplay" aria-live="polite">
+
+        <p
+            id="timeDisplay"
+            aria-live="polite"
+        >
             00:00 / 00:00
         </p>
 
 
         <hr>
 
+
+        <!-- ADD CLIP -->
+
         <h3>Add Clip</h3>
 
         <p>
-            Pause the base video at the desired position, then choose
-            the clip you want to insert.
+            Pause the base video at the desired position,
+            choose a video clip, and press Insert Clip.
         </p>
 
-        <button
-            id="insertClipBtn"
-            type="button"
-        >
-            Insert Clip
-        </button>
 
         <label for="clipInput">
             Choose Clip
@@ -172,12 +261,22 @@
             accept="video/*"
         >
 
+
+        <button
+            id="insertClipBtn"
+            type="button"
+        >
+            Insert Clip
+        </button>
+
+
         <button
             id="doneClipBtn"
             type="button"
         >
             Done
         </button>
+
 
         <button
             id="clearClipsBtn"
@@ -186,7 +285,12 @@
             Clear
         </button>
 
-        <h3>Clips to Insert</h3>
+
+        <!-- CLIP LIST -->
+
+        <h3>
+            Clips to Insert
+        </h3>
 
         <div
             id="clipList"
@@ -196,6 +300,24 @@
             No clips added yet.
         </div>
 
+
+        <hr>
+
+
+        <!-- SAVE -->
+
+        <h3>
+            Export
+        </h3>
+
+        <p
+            id="ffmpegStatus"
+            aria-live="polite"
+        >
+            FFmpeg is ready when needed.
+        </p>
+
+
         <button
             id="saveProjectBtn"
             type="button"
@@ -203,35 +325,64 @@
             Save Final Video
         </button>
 
+
+        <br><br>
+
+
         <button
             id="insertBackBtn"
             type="button"
         >
             Back to Video Tools
         </button>
+
     </section>
 
 
-    <!-- AUDIO TOOLS -->
-    <section id="audioTools" hidden>
+    <!-- ==========================================
+         AUDIO TOOLS
+         ========================================== -->
+
+    <section
+        id="audioTools"
+        hidden
+    >
+
         <h2>Audio Tools</h2>
 
-        <button type="button">
+        <button
+            type="button"
+            disabled
+        >
             Merge Audio
         </button>
 
-        <button type="button">
+        <button
+            type="button"
+            disabled
+        >
             Trim Audio
         </button>
 
-        <button id="audioBackBtn" type="button">
+        <button
+            id="audioBackBtn"
+            type="button"
+        >
             Back
         </button>
+
     </section>
 
 
-    <!-- SETTINGS -->
-    <section id="settings" hidden>
+    <!-- ==========================================
+         SETTINGS
+         ========================================== -->
+
+    <section
+        id="settings"
+        hidden
+    >
+
         <h2>Settings</h2>
 
         <label for="exportFormat">
@@ -239,33 +390,104 @@
         </label>
 
         <select id="exportFormat">
-            <option value="mp4">MP4</option>
-            <option value="mp3">MP3</option>
+
+            <option value="mp4">
+                MP4
+            </option>
+
+            <option value="mp3">
+                MP3
+            </option>
+
         </select>
 
-        <button id="settingsBackBtn" type="button">
+
+        <button
+            id="settingsBackBtn"
+            type="button"
+        >
             Back
         </button>
+
     </section>
 
 
-    <!-- HELP -->
-    <section id="help" hidden>
+    <!-- ==========================================
+         HELP
+         ========================================== -->
+
+    <section
+        id="help"
+        hidden
+    >
+
         <h2>Help</h2>
 
         <p>
-            Step-by-step tutorials for every editing tool will
-            appear here.
+            Step-by-step tutorials for every editing tool
+            will appear here.
         </p>
 
-        <button id="helpBackBtn" type="button">
+
+        <button
+            id="helpBackBtn"
+            type="button"
+        >
             Back
         </button>
+
     </section>
 
 </main>
 
+
+<!-- ==========================================
+     FFmpeg Browser Module
+     ========================================== -->
+
+<script type="module">
+
+    import {
+        FFmpeg
+    } from "https://cdn.jsdelivr.net/npm/@ffmpeg/ffmpeg@0.12.15/+esm";
+
+
+    import {
+        fetchFile,
+        toBlobURL
+    } from "https://cdn.jsdelivr.net/npm/@ffmpeg/util@0.12.2/+esm";
+
+
+    /*
+     * Make FFmpeg available to script.js.
+     */
+
+    window.DreamFFmpeg = FFmpeg;
+
+    window.DreamFetchFile = fetchFile;
+
+    window.DreamToBlobURL = toBlobURL;
+
+
+    /*
+     * Tell script.js that FFmpeg libraries
+     * have been loaded.
+     */
+
+    window.dispatchEvent(
+        new Event("dream-ffmpeg-ready")
+    );
+
+</script>
+
+
+<!-- ==========================================
+     APPLICATION JAVASCRIPT
+     ========================================== -->
+
 <script src="script.js"></script>
 
+
 </body>
+
 </html>
