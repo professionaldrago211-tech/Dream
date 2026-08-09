@@ -32,8 +32,15 @@ jobs:
         with:
           node-version: 22
 
-      - name: Install FFmpeg dependencies
+      - name: Install dependencies
         run: npm install
+
+      - name: Prepare FFmpeg worker
+        run: |
+          cp node_modules/@ffmpeg/ffmpeg/dist/esm/worker.js ./ffmpeg-worker.js
+          cp node_modules/@ffmpeg/ffmpeg/dist/esm/const.js ./const.js
+          cp node_modules/@ffmpeg/ffmpeg/dist/esm/errors.js ./errors.js
+          cp node_modules/@ffmpeg/ffmpeg/dist/esm/utils.js ./utils.js
 
       - name: Setup GitHub Pages
         uses: actions/configure-pages@v5
